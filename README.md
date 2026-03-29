@@ -14,4 +14,4 @@ A lightweight SDK for the ER:LC Private Server API, designed to simplify request
 
 ## My Skills
 
-[![HTML](https://skillicons.dev/icons?i=java,js,css,html)](https://skillicons.dev)
+[![https://skillicons.dev](https://skillicons.dev/icons?i=java,js,css,html)](https://skillicons.dev)
