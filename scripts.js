@@ -31,7 +31,7 @@ cards.forEach(card => {
 const texts = [
     "a web developer",
     "an robotics enthusiast",
-    "a 3D modeler"
+    "a CAD designer"
 ];
 
 let textIndex = 0;
@@ -49,7 +49,7 @@ function type() {
         charIndex++;
         if (charIndex === currentText.length) {
             typingForward = false;
-            setTimeout(type, 4000); // pause after fully typed
+            setTimeout(type, 3000); // pause after fully typed
             return;
         }
     } else {
