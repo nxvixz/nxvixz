@@ -30,7 +30,7 @@ cards.forEach(card => {
 
 const texts = [
     "a web developer",
-    "an robotics enthusiast",
+    "a robotics enthusiast",
     "a CAD designer"
 ];
 
