@@ -13,7 +13,7 @@ cards.forEach(card => {
 
   if (!project) return;
 
-  const spans = card.querySelectorAll('span');
+  const spans = card.querySelectorAll('.github, .npm, .website');
 
   spans.forEach(span => {
     span.addEventListener('click', () => {
