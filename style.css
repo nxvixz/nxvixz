@@ -1,0 +1,298 @@
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #18181b; --card-bg-hover: #212124;
+    --text-primary: #f5f5f5; --text-secondary: #8a8a8a;
+    --border: #2e2e2e; --border-hover: #4a4a4a;
+    --accent: #6366f1; --accent-hover: #818cf8;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+
+    color: var(--text-secondary);
+    font-family: "IBM Plex Sans", sans-serif;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.topbar-button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.topbar-button:hover {
+    color: var(--text-primary);
+    background-color: var(--card-bg-hover);
+}
+
+.topbar-button:active {
+    background-color: var(--card-bg);
+    transform: scale(0.98);
+}
+
+.topbar-button .material-symbols-outlined {
+    transition: color 0.15s ease;
+}
+
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48 }
+
+#home-button {
+    cursor: pointer;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6svh;
+    border-bottom: var(--border) 1px solid;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--bg);
+    z-index: 9999;
+}
+
+.topbar .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    width: 75%;
+}
+
+.topbar .buttons { display: flex; flex-direction: row; gap: 24px; font-weight: 700; }
+
+.topbar .title { font-size: 18px; }
+
+.title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.text {
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+}
+
+.list {
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.list .bullet { display: flex; flex-direction: column; gap: 4px; }
+.list .bullet > .row:first-child { display: flex; flex-direction: row; align-items: center; gap: 8px; }
+.list .bullet > .row:first-child::before,
+.list .bullet.row::before { content: "•"; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.list .bullet.row { display: flex; flex-direction: row; align-items: center; gap: 8px; }
+.list .sub-bullet::before { content: "○"; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.list .sub-bullet { display: flex; flex-direction: row; align-items: center; gap: 8px; padding-left: 20px; }
+
+.bold { font-weight: 700; }
+
+.hyperlink { color: var(--accent); cursor: pointer; }
+.hyperlink:hover { color: var(--accent-hover); }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100svh;
+    width: 75%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 96svh;
+    width: 100%;
+
+    border-top: 4px solid var(--border);
+}
+
+.section .content {
+    width: 75%;
+    padding: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.card:hover {
+    background-color: var(--card-bg-hover);
+    border-color: var(--border-hover);
+}
+
+.card .text { margin-top: 4px; }
+.card .separator {margin: 4px 0; width: 100%; border: 1px solid var(--border);}
+.card .list { margin-top: 4px; }
+
+.skills { display: flex; flex-direction: row; gap: 8px; }
+.skills img { width: 24px; }
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.card:hover {
+    background-color: var(--card-bg-hover); border-color: var(--border-hover);
+}
+
+.timestamp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.cards.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ---------- Skill icon + tooltip ---------- */
+
+.skill {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: default;
+}
+
+.skill img {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.15s ease;
+}
+
+.skill:hover img {
+    transform: scale(1.08);
+}
+
+.skill .tooltip {
+    /* Hidden by default, floats above the icon rather than pushing layout */
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+
+    display: block;
+    white-space: nowrap;
+    pointer-events: none;
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: var(--card-bg-hover);
+    border: 1px solid var(--border-hover);
+    padding: 4px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 20;
+
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+
+/* Little arrow pointing down at the icon */
+.skill .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 5px solid transparent;
+    border-top-color: var(--border-hover);
+}
+
+.skill:hover .tooltip,
+.skill:focus-within .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.label {
+    color: var(--accent-hover);
+    background-color: rgba(99, 102, 241, 0.12);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.01em;
+}
+
+.label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .cards.grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.section {
+    scroll-margin-top: 6svh;
+}
