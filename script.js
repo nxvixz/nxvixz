@@ -2,9 +2,7 @@ document.querySelectorAll('.java').forEach(el => { el.src = "./icons/languages/j
 document.querySelectorAll('.onshape').forEach(el => { el.src = "./icons/onshape.svg"; });
 
 // web development
-document.querySelectorAll('.javascript, .js').forEach(el => { el.src = "./icons/languages/javascript.svg"; });
-document.querySelectorAll('.html').forEach(el => { el.src = "./icons/languages/html.svg"; });
-document.querySelectorAll('.css').forEach(el => { el.src = "./icons/languages/css.svg"; });
+document.querySelectorAll('.javascript, .js').forEach(el => { el.src = "./icons/languages/javascript.svg"; });;
 
 // libraries
 document.querySelectorAll('.djs, .discordjs').forEach(el => { el.src = "./icons/libraries/discordjs.svg"; });
